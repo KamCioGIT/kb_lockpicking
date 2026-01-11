@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.0); 
+    font-family: sans-serif;
+    user-select: none;
+}
+
+#bg-layer {
+    position: absolute;
+    top: 46%;
+    left: 54.93%;
+    transform: translate(-50%, -50%);
+    
+    width: 770px; 
+    height: 505px;
+    
+    background-image: url('textures/slice1.png');
+    
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    z-index: 1;
+    display: none;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 300px; 
+    height: 200px;
+    
+    background-color: transparent; 
+    
+    display: none; 
+    z-index: 10;
+}
+
+#backing-upper {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 60px; 
+    z-index: 2;
+}
+
+#lock-body {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 100px;
+    z-index: 3;
+}
+
+.pin {
+    position: absolute;
+    width: 70px;
+    height: 100px;
+    bottom: 0; 
+    left: 0;
+    transition: bottom 0.2s ease-out;
+    
+    background-image: url('textures/Pin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    z-index: 2;
+}
+
+.pin.up {
+    bottom: 47px;
+}
+
+.pin.locked {
+    bottom: 47px;
+    background-image: url('textures/LockedPin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#pin-0 { left: 62px; }
+#pin-1 { left: 113px; }
+#pin-2 { left: 162px; }
+#pin-3 { left: 212px; }
+#pin-4 { left: 264px; }
+
+#lockpick {
+    position: absolute;
+    bottom: -90px;
+    left: 40px; 
+    
+    width: 520px;   
+    height: 140px; 
+    z-index: 4;
+    transition: left 0.1s linear;
+    
+    margin-left: -500px;
+    
+    background-image: url('textures/Lockpick.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#instructions {
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px black;
+    z-index: 5;
+}
+
+.spring {
+    position: absolute;
+    top: -100px;
+    
+    height: 100px; 
+    width: 30px;
+    
+    transform-origin: top center;
+    
+    background-image: url('textures/spring.png');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+    z-index: 1;
+    
+    transition: height 0.2s ease-out;
+}
+
+.pin.up .spring {
+    height: 15px;
+    transition: height 0.2s ease-out;
+}
+
+.pin.locked .spring {
+    height: 55px;
+    transition: height 0.2s ease, opacity 0.2s ease;
+}
+
+#pick-head {
+    position: absolute;
+    
+    right: -25px;
+    bottom: 60px;
+    
+    width: 80px;
+    height: 50px;
+    
+    background-image: url('textures/Lockpick_head.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    display: none; 
+    z-index: 12;
+    
+    transform-origin: center center;
+}
